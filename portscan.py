@@ -1,16 +1,15 @@
 #!/usr/bin/python
-# port scanner
 from __future__ import print_function
 import socket
 
-s = socket.socket()
 host = socket.gethostname()
 
-print(host)
+print("Scanning this host:", host)
 #ports = 22, 80, 443, 8080
 
 def scan(port):
 	try:
+		s = socket.socket()
 		s.connect((host, port))
 	except:
 		print('', end="")
